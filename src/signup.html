@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signin</title>
+    <link rel="stylesheet" href="sass/sign.scss" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="#">
+        <fieldset>
+          <legend>Sign In</legend>
+          <label for="username" class="vhide">First-Name</label>
+          <input
+            id="First-Name"
+            name="First-Name"
+            type="text"
+            placeholder="First-Name"
+            required
+            minlength="2"
+          />
+          <label for="username" class="vhide">Last-Name</label>
+          <input
+            id="Last-Name"
+            name="Last-Name"
+            type="text"
+            placeholder="Last-Name"
+            required
+            minlength="2"
+          />
+          <label for="username" class="vhide">Username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="Username"
+            required
+            minlength="2"
+          />
+          <label for="password" class="vhide">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="text"
+            placeholder="Password"
+            required
+            minlength="6"
+          />
+          <label for="username" class="vhide">Email</label>
+          <input
+            id="Email"
+            name="Email"
+            type="text"
+            placeholder="Email"
+            required
+            minlength="2"
+          />
+          <a href="./login.html" class="tologin" >Login</a>
+          <button class="signin">Sign in</button>
+        </fieldset>
+      </form>
+    </div>
+    <script type="module" src="/js/sign.js"></script>
+  </body>
+</html>
