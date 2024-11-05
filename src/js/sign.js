@@ -32,4 +32,13 @@ form.addEventListener("submit" , (e) => {
         console.log(res.data);
         console.log(res.status);
     })
+    .catch((err) => {
+        console.log(err);
+
+        if (err.res && (err.res.status === 400 || err.res.status === 401)) {
+            p.textContent = "Opened";
+        } else {
+            p.textContent = "Opened before";
+        }
+    }) 
 })

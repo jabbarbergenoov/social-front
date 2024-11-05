@@ -8,9 +8,17 @@
     margin: 0 auto;
 }
 .aslide {
+    background-color: gray;
+    width: 500px;
+    display: flex;
+    height: 100vh;
+    position: fixed;
     &-inner {
         display: flex;
         flex-direction: column;
+        img {
+            width: 50px;
+        }
     }
     &-home {
         svg {

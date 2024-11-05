@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Reset Pasword</title>
   </head>
   <body>
     <div class="container">
       <form action="#" id="form">
         <fieldset>
-          <legend>Login</legend>
+          <legend>Reset Pasword</legend>
           <label for="username" class="vhide">Username</label>
           <input
             id="username"
@@ -19,25 +19,28 @@
             required
             minlength="2"
           />
+          <label for="username" class="vhide">Code</label>
+          <input
+            id="code"
+            name="username"
+            type="number"
+            placeholder="Code"
+            required
+            minlength="2"
+          />
           <label for="password" class="vhide">Password</label>
           <input
             id="password"
             name="password"
             type="text"
-            placeholder="Password"
+            placeholder="New Password"
             required
             minlength="6"
           />
-          <p id="p"></p>
-          <button class="signin">Login</button>
-          <div class="dd">
-            <a href="./signup.html" class="tologin">Sign in</a>
-            <a href="./reser.html" class="tologi">Reset pasword</a>
-          </div>
-
+          <button class="signin">Changed</button>
         </fieldset>
       </form>
     </div>
-    <script type="module" src="/js/login.js"></script>
+    <script type="module" src="./js/reset.js"></script>
   </body>
 </html>
