@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="#" id="form">
+        <fieldset>
+          <legend>Login</legend>
+          <label for="username" class="vhide">Username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            placeholder="Username"
+            required
+            minlength="2"
+          />
+          <label for="password" class="vhide">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="text"
+            placeholder="Password"
+            required
+            minlength="6"
+          />
+          <p id="p"></p>
+          <button class="signin">Login</button>
+          <div class="dd">
+            <a href="./signup.html" class="tologin">Sign in</a>
+            <a href="./reser.html" class="tologi">Reset pasword</a>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+    <script type="module" src="/js/login.js"></script>
+  </body>
+</html>
