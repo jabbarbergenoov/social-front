@@ -1,0 +1,19 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+.container {
+    width: 500px;
+    margin: 0 auto;
+}
+input[type="text"] {
+    width: 200px;
+    background-color: #000;
+    border: 1px solid grey;
+    padding: 10px 20px;
+    color: #fff; 
+    border-radius: 10px;
+}
+input[type="file"] {
+
+}

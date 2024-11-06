@@ -4,25 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <aside class="aslide">
-      <div class="container">
+    <main>
+      <header class="aslide">
         <div class="aslide-inner">
           <div class="aslide-logo">
             <h1>Logo</h1>
           </div>
           <div class="aslide-home">
-            <img src="./images/house-solid (1).svg" alt="">
+            <img src="./images/house-solid (1).svg" alt="Home" />
+            <a href="#">Home</a>
           </div>
           <div class="aslide-profile">
-            <img src="./images/user-solid (1).svg" alt="">
+            <img src="./images/user-solid (1).svg" alt="Profile" />
+            <a href="#">Profile</a>
+          </div>
+          <div class="aslide-profile">
+            <img src="./images/circle-plus-solid.svg" alt="Post" />
+            <a href="./new-post.html">Post</a>
+          </div>
+          <div class="aslide-reg">
+            <a href="./signup.html">Signin</a>
+            <a href="./login.html">Login</a>
           </div>
         </div>
-      </div>
-    </aside>
-    <a href="./signup.html">singin</a>
-    <a href="./login.html">login</a>
+      </header>
+      <section class="section1">
+        <div class="container">
+          <form action="#" class="section1-inner">
+            <input
+              type="search"
+              id="search-input"
+              class="section1-inner-search"
+              placeholder="Search"
+            />
+            <input type="submit" class="section1-inner-submit" />
+          </form>
+        </div>
+        <div class="cards">
+          <div class="container">
+            <div class="cards-inner">
+              <a href="" class="card">
+                <div class="card-profile">
+                  <img src="./images/user-solid (1).svg" alt="User Profile" />
+                  <p>Name</p>
+                </div>
+                <div class="card-text">
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Expedita ex iure, neque consectetur aut sit, hic officia
+                    quasi quidem doloribus mollitia at cum, laborum dolore optio
+                    repudiandae sint ab commodi.
+                  </p>
+                  <img src="./images/l9fcy3sj95mwp23zvk13hdefpx0o_49090236931_e27408bbcc_o.webp" alt="">
+                </div>
+                <div class="card-idntucators">
+                  <div class="card-like">
+                    <img src="./images/heart-solid (3).svg" alt="">
+                    <p>Like</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>
