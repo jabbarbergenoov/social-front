@@ -1,6 +1,16 @@
 import { axiosInstance } from "./request";
 import "../sass/global.scss";
 
+// Получаем элементы
+const slideBars = document.querySelector('.aslide-bars');
+const slideMain = document.querySelector('.aslide-main');
+
+// Обработчик клика по кнопке меню
+slideBars.addEventListener('click', () => {
+  slideMain.classList.toggle('open');
+});
+
+
 axiosInstance.get('/posts/').then(res => {
     const cardsContainer = document.querySelector(".cards-inner");
 
@@ -21,8 +31,13 @@ axiosInstance.get('/posts/').then(res => {
         username.id = "username";
         username.innerText = post.username;
 
+        const follow = document.createElement('a');
+        follow.id = 'follow';
+        follow.innerText = "follow"
+
         cardProfile.appendChild(profileImg);
         cardProfile.appendChild(username);
+        cardProfile.appendChild(follow)
 
         const cardText = document.createElement("div");
         cardText.className = "card-text";

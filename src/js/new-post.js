@@ -36,13 +36,19 @@ form.addEventListener('submit', async (e) => {
                 "Content-Type": "multipart/form-data"
             }
         }).then((res) => {
+
             const text = document.getElementById('text').value;
             axiosInstance.post('/posts/upload', {
                 text: text,
                 image_id: res.data.image_id
+            }).then(res => {
+                if (res.status === 200) {
+                    window.location.href = 'index.html';
+                }
             })
-        }).catch(err => {
-            console.log(err);
         })
+            .catch(err => {
+                console.log(err);
+            })
     }
 })
