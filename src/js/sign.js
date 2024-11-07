@@ -9,7 +9,7 @@ form.addEventListener("submit" , (e) => {
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     const username = document.querySelector("#username").value;
-    axios.post('http://192.168.1.25:8000/auth/sign-up', {
+    axios.post('https://social-backend-kzy5.onrender.com/auth/sign-up', {
         first_name: first_name,
         last_name: last_name,
         email: email,
@@ -20,8 +20,8 @@ form.addEventListener("submit" , (e) => {
         const access_token = res.data.access_token
         const refresh_token = res.data.refresh_token
         if (access_token && refresh_token) {
-            localStorage.setItem("access_token" , access_token)
-            localStorage.setItem('refresh_token' , refresh_token)
+            localStorage.setItem("accessToken" , access_token)
+            localStorage.setItem('refreshToken' , refresh_token)
             console.log("token");
         } else {
             console.log("not token");
