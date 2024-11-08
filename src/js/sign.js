@@ -9,7 +9,7 @@ form.addEventListener("submit" , (e) => {
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     const username = document.querySelector("#username").value;
-    axios.post('https://social-backend-kzy5.onrender.com/auth/sign-up', {
+    axios.post('http://192.168.1.25:8080/auth/sign-up', {
         first_name: first_name,
         last_name: last_name,
         email: email,
@@ -34,11 +34,11 @@ form.addEventListener("submit" , (e) => {
     })
     .catch((err) => {
         console.log(err);
-
+        p.style.color = "red"
         if (err.res && (err.res.status === 400 || err.res.status === 401)) {
-            p.textContent = "Opened";
+            p.textContent = "created";
         } else {
-            p.textContent = "Opened before";
+            p.textContent = "previously created account ";
         }
     }) 
 })
