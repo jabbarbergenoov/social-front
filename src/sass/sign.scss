@@ -42,7 +42,6 @@ fieldset {
   box-shadow: 0 2px 2px darken( $bg, 2% );
   
   legend {
-    
     font-weight: 700;
     font-size: 2em;
     text-transform: uppercase;
@@ -244,8 +243,7 @@ body {
   font-size: 16px;
   background: $bg;
   color: $fg;
-  padding: 1em 0 10em;
-  
+  // padding: 1em 0 10em;
 }
 
 .vhide {
@@ -268,4 +266,42 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-top: 20px;
     text-decoration: none;
+}
+@media screen and (max-width:360px) {
+  .container {
+    width: 210px;
+    margin:  0 auto;
+  }
+  form {
+    width: 210px;
+    margin: 0 auto;
+  }
+  fieldset {
+    width: 250px;
+    margin: 0 ;
+    justify-content: center;
+    align-items: center;
+  }
+  body {
+    padding: 0;
+    padding-right: 20px;
+  }
+  fieldset legend {
+    font-size: 1em;
+    text-align: center;
+  }
+  input[type= text] {
+    font-size: 0.9em;
+  }
+  .tologin {
+    text-align: start;
+    margin: 0px;
+  }
+  #p {
+    padding: 0;
+    margin: 0;
+  }
+  .signin {
+    font-size: 0.7em;
+  }
 }

@@ -1,0 +1,125 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 300px; // Меньшая ширина поля ввода для лучшего отображения
+    background-color: #333;
+    border: 1px solid #555;
+    padding: 12px 20px;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+        border-color: #888;
+        outline: none;
+    }
+
+    &::placeholder {
+        color: #aaa;
+    }
+}
+
+input[type="file"] {
+    width: 100%;
+    max-width: 300px; // Чтобы кнопка выбора файла была аналогична ширине текстового поля
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+        background-color: #444;
+        border-color: #888;
+    }
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        background-color: #0056b3;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* Стили для preview изображения */
+#preview {
+    display: none;
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 300px;
+    }
+
+    #preview {
+        width: 340px;
+    }
+
+    input[type=text] {
+        width: 250px;
+
+        &::placeholder {
+            font-size: 12px;
+        }
+    }
+
+    input[type=file] {
+        width: 250px;
+
+        font-size: 12px;
+
+    }
+
+    input[type=submit] {
+
+        font-size: 12px;
+
+    }
+
+}

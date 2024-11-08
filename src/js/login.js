@@ -10,7 +10,7 @@ form.addEventListener("submit", (e) => {
     const password = document.querySelector("#password").value;
     const p = document.getElementById('p'); // p elementi oldindan mavjud
 
-    axios.post("http://192.168.1.15:8000/auth/login", {
+    axios.post("https://social-backend-kzy5.onrender.com/auth/login", {
         username: username,
         password: password,
     })
