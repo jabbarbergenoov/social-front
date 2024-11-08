@@ -42,7 +42,7 @@ function mes() {
         res.data.forEach(post => {
             const card = document.createElement("a");
             card.className = "card";
-            card.href = "http://localhost:5173/post?id=1";
+            card.href = "card.html";
             card.id = post.id
     
             const cardProfile = document.createElement("div");
