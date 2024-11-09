@@ -10,6 +10,12 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'src/index.html'), // Asosiy fayl
         sign: path.resolve(__dirname, 'src/signup.html'), // Asosiy fayl
+        card: path.resolve(__dirname, 'src/card.html'), // Asosiy fayl
+        login: path.resolve(__dirname, 'src/login.html'), // Asosiy fayl
+        reser: path.resolve(__dirname, 'src/reser.html'), // Asosiy fayl
+        reser: path.resolve(__dirname, 'src/reser.html'), // Asosiy fayl
+        new_post: path.resolve(__dirname, 'src/new-post.html'), // Asosiy fayl
+        request: path.resolve(__dirname, 'src/js/request.js'), // Asosiy fayl
       }
     },
     emptyOutDir: true, // dist papkasini bo'sh qilish
