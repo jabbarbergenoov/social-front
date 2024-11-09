@@ -3,6 +3,12 @@ import "../sass/new-post.scss";
 import { axiosInstance } from "./request";
 const fileInput = document.getElementById("file-upload");
 const preview = document.getElementById("preview");
+const arr = document.querySelector('.arr-img')
+
+arr.addEventListener('click' , (e) => {
+    window.location.href = 'index.html';
+
+})
 
 fileInput.addEventListener("change", function (event) {
     const file = event.target.files[0];
@@ -22,11 +28,11 @@ const form = document.getElementById('form')
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    const text = document.getElementById('text').value;
     if (fileInput.value) {
         const file = fileInput.files[0]
         if (!file) {
-            return
+            return;
         }
 
         const formData = new FormData();
@@ -37,10 +43,9 @@ form.addEventListener('submit', async (e) => {
             }
         }).then((res) => {
 
-            const text = document.getElementById('text').value;
             axiosInstance.post('/posts/upload', {
                 text: text,
-                image_id: res.data.image_id
+                image_id: res.data.image_id || null
             }).then(res => {
                 if (res.status === 200) {
                     window.location.href = 'index.html';
@@ -50,5 +55,16 @@ form.addEventListener('submit', async (e) => {
             .catch(err => {
                 console.log(err);
             })
+    } else {
+        axiosInstance.post("/posts/upload" ,{
+            text: text,
+            image_id: null
+        }).then(res => {
+            if(res.status === 200) {
+                window.location.href = 'index.html'
+            }
+        }).catch(err => {
+            console.log(err);
+        })
     }
 })

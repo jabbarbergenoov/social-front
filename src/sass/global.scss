@@ -5,6 +5,7 @@
     font-family: "Montserrat";
 }
 
+
 .container {
     width: 90%;
     margin: 0 auto;
@@ -41,6 +42,7 @@ main {
         display: flex;
         flex-direction: column;
     }
+
     &-inner {
         display: flex;
         flex-direction: column;
@@ -108,6 +110,7 @@ main {
             }
         }
     }
+
     &-bars {
         display: none;
     }
@@ -166,6 +169,10 @@ main {
     }
 }
 
+.x {
+    display: none;
+}
+
 .card {
     border: 1px solid gray;
     padding: 10px;
@@ -187,7 +194,6 @@ main {
             border: 1px solid #fff;
             filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg) brightness(106%) contrast(100%);
         }
-
     }
 
     &-text {
@@ -212,6 +218,10 @@ main {
         .liked {
             filter: brightness(0) saturate(100%) invert(13%) sepia(97%) saturate(6405%) hue-rotate(359deg) brightness(96%) contrast(113%);
         }
+
+        .followed {
+            color: blue;
+        }
     }
 
     &-comment {
@@ -230,14 +240,49 @@ main {
 .card-indicators {
     display: flex;
 }
+
 .x {
     display: none;
 }
 
-@media screen and (max-width:980px) {
+.logout {
+    color: #000;
+    font-family: "Montserrat";
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: 0.8s;
+
+    &:hover {
+        background-color: #000;
+        color: #fff;
+        box-shadow: 2px 2px 2px 2px rgb(42, 42, 42);
+    }
+}
+.btns {
+    display: flex;
+    justify-content: start;
+    margin-top: 30px;
+    .btn {
+        color: #000;
+        font-family: "Montserrat";
+        padding: 10px 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        transition: 0.8s;
+    
+        &:hover {
+            background-color: #000;
+            color: #fff;
+            box-shadow: 2px 2px 2px 2px rgb(42, 42, 42);
+        }
+    }
+  
+}
+
+@media screen and (max-width: 980px) {
     .aslide {
         width: 300px;
-
     }
 
     .section1 {
@@ -277,19 +322,21 @@ main {
     }
 }
 
-@media screen and (max-width : 760px) {
+@media screen and (max-width: 760px) {
     .card {
         width: 100%;
     }
+
     .aslide-reg {
         margin-top: 20px;
     }
 }
 
-@media screen and (max-width : 650px) {
+@media screen and (max-width: 650px) {
     body {
         overflow-x: hidden;
     }
+
     main {
         flex-direction: column;
     }
@@ -310,19 +357,28 @@ main {
         justify-content: space-evenly;
     }
 
+    .img-x {
+        margin-top: 20px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+    }
+
     .section1 {
         margin: 0;
     }
 
     .aslide-logo {
-        padding: 0 ;
+        padding: 0;
+
         h1 {
             font-size: 28px;
         }
     }
 
     .aslide-home {
-        padding: 0 ;
+        padding: 0;
+
         img {
             width: 35px;
         }
@@ -345,17 +401,19 @@ main {
         border-radius: 10px;
         right: 100%;
     }
+
     .aslide-main.open {
-            left: 0px;
+        left: 50px;
     }
+
     .x {
         display: block;
         display: flex;
         color: #fff;
-        a {
-           
-        }
+
+        a {}
     }
+
     .aslide-bars {
         display: flex;
         align-items: center;
@@ -364,12 +422,14 @@ main {
 
         &:active {
             .aslide-main {
-                left: 0%;  
+                left: 0%;
             }
         }
     }
+
     .aslide-profile {
-        padding: 0 ;
+        padding: 0;
+
         img {
             width: 35px;
         }
@@ -380,7 +440,7 @@ main {
     }
 
     .aslide-reg {
-        padding: 0 ;
+        padding: 0;
         margin: 0;
         padding: 0;
         height: 100%;
@@ -388,5 +448,22 @@ main {
         a {
             font-size: 14px;
         }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .aslide-main {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .aslide-main {
+        left: -1999999999px;
+        width: 250px;
+    }
+
+    .section1 {
+        padding-bottom: 350px;
     }
 }

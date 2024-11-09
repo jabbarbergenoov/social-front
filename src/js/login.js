@@ -8,8 +8,8 @@ form.addEventListener("submit", (e) => {
 
     const username = document.querySelector("#username").value;
     const password = document.querySelector("#password").value;
-    const p = document.getElementById('p'); // p elementi oldindan mavjud
-
+    const p = document.getElementById('p'); 
+    p.style.color = "red"
     axios.post("https://social-backend-kzy5.onrender.com/auth/login", {
         username: username,
         password: password,

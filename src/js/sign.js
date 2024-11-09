@@ -34,11 +34,11 @@ form.addEventListener("submit" , (e) => {
     })
     .catch((err) => {
         console.log(err);
-
+        p.style.color = "red"
         if (err.res && (err.res.status === 400 || err.res.status === 401)) {
-            p.textContent = "Opened";
+            p.textContent = "created";
         } else {
-            p.textContent = "Opened before";
+            p.textContent = "previously created account ";
         }
     }) 
 })

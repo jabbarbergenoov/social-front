@@ -1,0 +1,766 @@
+@charset "UTF-8";
+
+/**
+ * $FONT-FACE
+ */
+@font-face {
+    font-family: Helvetica Neue LT Condensed;
+    src: url("https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-57Cond.4628b95d.eot") format("embedded-opentype"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-57Cond.a3d3dfa2.woff2) format("woff2"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-57Cond.af72f10e.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display:swap
+}
+
+@font-face {
+    font-family: Helvetica Neue LT Condensed;
+    src: url("https://www.charlottetilbury.comhttps://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-67MdCn.14f97302.eot") format("embedded-opentype"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-67MdCn.320638be.woff2) format("woff2"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-67MdCn.d54ad107.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display:swap
+}
+
+@font-face {
+    font-family: Helvetica Neue LT Condensed;
+    src: url("https://www.charlottetilbury.comhttps://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-67MdCn.14f97302.eot") format("embedded-opentype"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-67MdCn.320638be.woff2) format("woff2"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-67MdCn.d54ad107.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display:swap
+}
+
+@font-face {
+    font-family: Helvetica Neue LT Std;
+    src: url("https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-45Light.f4ef61bf.eot") format("embedded-opentype"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-45Light.3fab9e2e.woff2) format("woff2"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-45Light.81e518aa.woff) format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display:swap
+}
+
+@font-face {
+    font-family: Helvetica Neue LT Std;
+    src: url("https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-55Roman.002ab174.eot") format("embedded-opentype"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-55Roman.38365077.woff2) format("woff2"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueLTW05-55Roman.4258ce48.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display:swap
+}
+
+@font-face {
+    font-family: Helvetica Neue LT Std;
+    src: url("https://www.charlottetilbury.com/_next/static/media/HelveticaNeueWorld-75Bold.582e4713.eot") format("embedded-opentype"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueWorld-75Bold.82902b51.woff2) format("woff2"), url(https://www.charlottetilbury.com/_next/static/media/HelveticaNeueWorld-75Bold.7d31d28f.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display:swap
+}
+
+/**
+ * $VARS (TOKENS)
+ */
+:root {
+  /* $HERO COLOURS */
+  /* Basis for Main inteactive UI components. Also use DNC for 
+  *  positive confirmations, selected states and interactions.
+  */
+  --white: #ffffff; /* rgb(255,255,255) */
+
+  --dark-night-crimson:      #340c0c;
+  --dark-night-crimson--100: var(--dark-night-crimson);
+  --dark-night-crimson--80:  #5D3D3D;
+  --dark-night-crimson--60:  #856D6D;
+  --dark-night-crimson--40:  #AE9E9E;
+  --dark-night-crimson--20:  #D6CECE;
+  --dark-night-crimson--10:  #EAE6E6;
+  --dark-night-crimson--05:  #F5F3F3;
+  --dark-night-crimson--02:  #FBFAFA;
+  
+  --light-night-crimson:     #6E2132;
+
+  
+  /* $GREY COLOURS */
+  /* Basis for backgrounds and non important UI elements. Reserve 
+  *  for borders and decorative elements that denote the end or edge 
+  *  of content.
+  */
+  --skincare-grey:      #3C3C3B;
+  --skincare-grey--100: var(--skincare-grey);
+  --skincare-grey--60:  #8A8A89;
+  --skincare-grey--40:  #B1B1B1;
+  --skincare-grey--20:  #D8D8D8;
+  --skincare-grey--10:  #ECECEB;
+  --skincare-grey--05:  #F5F5F5;
+  
+  
+  /* $SECONDARY COLOURS */
+  /* Include these when considering Illustrations and secondary UI 
+  *  elements. (e.g. toggle fills, visited links etc.)
+  */
+  --highlighter-pink: #A73456;
+  --pillow-talk:      #E09894;
+  --blush:            #FDE8E0;
+  --nude:             #FFF5F3;
+  
+
+  /* $SPECIAL USE */
+  /* These are for use under certain cirumstances.
+  *  - Error Red, for errors or fail states: e.g. a notifcation that requires instant action;
+  *  - Warning Orange, for warnings where actions could lead to destructive outcomes;
+  *  - Info Blue, for informative messages to help the user achieve a task that might not be immediatly obvious;
+  *  - Success Green, for confirmative messages, when the user has achieved an outcome.
+  */
+  --error-red:         #CE2E2E;
+  --error-red-bg:      #FDF5F5;
+  
+  --warning-orange:    #E46000;
+  --warning-orange-bg: #FEF7F2;
+  
+  --success-green:     #1F992E;
+  --success-green-bg:  #F4FAF5;
+  
+  --info-blue:         #0254D0;
+  --info-blue--bg:     #F2F7FD;
+
+  /* $VENDOR COLOURS */
+  --vendor-facebook:  #ffc600;
+  --vendor-google:    #4885ed;
+  --vendor-twitter:   #3819ff;
+  --vendor-pinterest: #00b28f;
+  --vendor-youtube:   #ffc600;
+  --vendor-instagram: #ff5932;
+  
+  /* $VENDOR COLOURS */
+  --vendor-facebook:     #FFC600;
+  --vendor-google:       #4885ED;
+  --vendor-twitter:      #3819FF;
+  --vendor-pinterest:    #00B28F;
+  --vendor-youtube:      #FFC600;
+  --vendor-instagram:    #FF5932;
+  
+  /* $TIMING SCALE */
+  --transition:          all 300ms cubic-bezier(0.270, 0.175, 0.285, 1.010);
+  
+  /* $FONT FAMILIES */
+  --brand-font-stack:    "Helvetica Neue LT Std", "Helvetica Neue", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  --mono-font-stack:     "SFMono-Regular", Consolas, "Lucida Console", Monaco,
+    Courier, monospace;
+  
+  /* $FONT FAMILIES - SHARED */
+  --fs-heading:       28px;
+  --fs-title:         24px;
+  --fs-subheading:    20px;
+  --fs-mini-subtitle: 16px;
+  --fs-cta:           16px;
+  --fs-label:         14px;
+  --fs-body:          16px;
+  --fs-micro:         14px;
+  --fs-nano:          12px;
+
+  
+  /* SPACING SCALE */
+  --sp-micro:  0.5rem; /* 8px*/
+  --sp-small:  1rem;   /* 16px */
+  --sp-medium: 1.5rem; /* 24px */
+  --sp-large:  2rem;   /* 32px */
+  --sp-huge:   2.5rem; /* 40px */
+  --sp-jumbo:  3rem;   /* 48px */
+  --sp-giga:   3.5rem; /* 56px */
+  --sp-terra:  4rem;   /* 64px */
+}
+
+
+/**
+* $RESET
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/**
+* $LAYOUT-DEBUG
+*/
+.lo-debug *,
+.lo-debug *:before,
+.lo-debug *:after {  
+  outline: 1px solid rgba(0,0,0,0.05);
+}
+
+
+/**
+ * $MEDIA-QUERY-HELPER
+ */
+.mq-debug:before {
+  content: '∞ ➜ 767px';
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 2.5;
+  font-family: var(--mono-font-stack);
+  white-space: nowrap;
+  color: #3A3934;
+  background-color: #FFF8DD;
+  border-bottom: 1px solid #E6E0C9;
+}
+@media (min-width: 768px) and (max-width: 1023px) {  .mq-debug:before { content: '768px ➜ 1023px'; } }
+@media (min-width: 1024px) and (max-width: 1279px) { .mq-debug:before { content: '1024px ➜ 1279px'; } }
+@media (min-width: 1280px) and (max-width: 1919px) { .mq-debug:before { content: '1280px ➜ 1919px'; } }
+@media (min-width: 1920px) {                         .mq-debug:before { content: '1920px ➜ ∞'; } }
+
+
+/**
+* $BASIC HOUSEKEEPING
+*/
+::selection {
+  --selection: currentColor;
+
+  background-color: rgba(167,52,86,0.25);
+  text-shadow: none
+}
+:focus {
+/*   outline: 4px dotted currentColor; */
+  /* outline-color: rgb(153, 153, 158);
+  outline-style: auto;
+  outline-width: 4px */
+  outline: 2px solid var(--white);
+  outline-offset: 0px;
+  box-shadow: inset 0 0 0 3px var(--light-night-crimson);
+}
+
+body {
+  color: var(--woodsmoke);
+  background-color: black;
+}
+
+.spotlight {
+  /* Center element in center */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  fkex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+a { 
+  color: var(--woodsmoke);
+  fill:  currentcolor;
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--bondi-blue--800);
+  fill:  currentcolor;
+}
+a:visited {
+  color: var(--prussian-blue);
+  fill:  currentcolor;
+}
+
+
+/**
+ * $IMAGES
+ */
+/* img { background-image:url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0icGxhY2Vob2xkZXItc3Znc3R5bGVkX19QbGFjZWhvbGRlclNWRy10Y2J4Z2EtMCBoWnhad2kiIHZpZXdCb3g9IjAgMCAyOTYgMjc1IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cmVjdCBmaWxsPSJ1cmwoI3BsYWNlaG9sZGVyLWxpbmVhci1ncmFkaWVudC0wYTI3YTM1OC0xMWE2LTQzNDEtOTYxNS0xYzlhMzY0ZGMxMWQpIiBjbGlwLXBhdGg9InVybCgjcGxhY2Vob2xkZXItY2xpcC1wYXRoLTBhMjdhMzU4LTExYTYtNDM0MS05NjE1LTFjOWEzNjRkYzExZCkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjwvcmVjdD48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9InBsYWNlaG9sZGVyLWxpbmVhci1ncmFkaWVudC0wYTI3YTM1OC0xMWE2LTQzNDEtOTYxNS0xYzlhMzY0ZGMxMWQiPjxzdG9wIG9mZnNldD0iLTAuMDY1NDI0IiBzdG9wLWNvbG9yPSIjRjVGN0Y5IiBzdG9wLW9wYWNpdHk9IjEiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9mZnNldCIgdmFsdWVzPSItMzsgMSIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT48L3N0b3A+PHN0b3Agb2Zmc2V0PSIwLjcwMDkzMiIgc3RvcC1jb2xvcj0iI2ZjZmNmYyIgc3RvcC1vcGFjaXR5PSIxIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvZmZzZXQiIHZhbHVlcz0iLTEuNTsgMS41IiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPjwvc3RvcD48c3RvcCBvZmZzZXQ9IjEuOTM0NTgiIHN0b3AtY29sb3I9IiNGNUY3RjkiIHN0b3Atb3BhY2l0eT0iMSI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib2Zmc2V0IiB2YWx1ZXM9Ii0xOyAzIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPjwvc3RvcD48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48L3N2Zz4='); }
+@media (prefers-color-scheme: dark) {
+img { background-image: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0icGxhY2Vob2xkZXItc3Znc3R5bGVkX19QbGFjZWhvbGRlclNWRy10Y2J4Z2EtMCBoWnhad2kiIHZpZXdCb3g9IjAgMCAyOTYgMjc1IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cmVjdCBmaWxsPSJ1cmwoI3BsYWNlaG9sZGVyLWxpbmVhci1ncmFkaWVudC0wYTI3YTM1OC0xMWE2LTQzNDEtOTYxNS0xYzlhMzY0ZGMxMWQpIiBjbGlwLXBhdGg9InVybCgjcGxhY2Vob2xkZXItY2xpcC1wYXRoLTBhMjdhMzU4LTExYTYtNDM0MS05NjE1LTFjOWEzNjRkYzExZCkiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjwvcmVjdD48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9InBsYWNlaG9sZGVyLWxpbmVhci1ncmFkaWVudC0wYTI3YTM1OC0xMWE2LTQzNDEtOTYxNS0xYzlhMzY0ZGMxMWQiPjxzdG9wIG9mZnNldD0iLTAuMDY1NDI0IiBzdG9wLWNvbG9yPSIjNUE1QTYyIiBzdG9wLW9wYWNpdHk9IjEiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9Im9mZnNldCIgdmFsdWVzPSItMzsgMSIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT48L3N0b3A+PHN0b3Agb2Zmc2V0PSIwLjcwMDkzMiIgc3RvcC1jb2xvcj0iIzRCNEI1NiIgc3RvcC1vcGFjaXR5PSIxIj48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvZmZzZXQiIHZhbHVlcz0iLTEuNTsgMS41IiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPjwvc3RvcD48c3RvcCBvZmZzZXQ9IjEuOTM0NTgiIHN0b3AtY29sb3I9IiM1QTVBNjIiIHN0b3Atb3BhY2l0eT0iMSI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib2Zmc2V0IiB2YWx1ZXM9Ii0xOyAzIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPjwvc3RvcD48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48L3N2Zz4='); }} */
+
+
+/**
+ * $TYPE
+ */
+h1,.header1,
+h2,.header2,
+h3,.header3,
+h4,.header4,
+h5,.header5, 
+h6,.header6,
+.label,
+.cta1,
+.cta2 { font-family: "Helvetica Neue LT Condensed"; }
+
+.body1,
+.body2,
+.disclaimer,
+.terms,
+.link1,
+.link2,
+.link3 { font-family: "Helvetica Neue LT Std"; }
+
+h1,.header1,
+h2,.header2,
+h3,.header3,
+h4,.header4,
+h5,.header5, 
+h6,.header6 { line-height: 1; letter-spacing: 0.031rem }
+
+h1,.header1 { font-size: 3.5rem; }
+h2,.header2 { font-size: 2.5rem; }
+h3,.header3 { font-size: 1.75rem; }
+h4,.header4 { font-size: 1.5rem; }
+h5,.header5 { font-size: 1.25rem; }
+h6,.header6 { font-size: 1rem; }
+
+.body1,
+.body2,
+.disclaimer,
+.label,
+.cta1,
+.cta2,
+.link1,
+.link2,
+.link3 { letter-spacing: 0.031rem }
+
+.body1 { font-size: 1rem; line-height: 1.25; }
+.body2 { font-size: 0.875rem; line-height: 1.125; }
+.disclaimer { font-size: 0.75rem; line-height: 1.167; }
+.terms { font-size: 0.75rem; line-height: 1.167; }
+.label { font-size: 0.75rem; line-height: 1.142; }
+.cta1 { font-size: 1rem; line-height: 1.25; text-align: center; }
+.cta2 { font-size: 0.875rem; line-height: 1.125; text-align: center; }
+
+.link1 { font-size: 0.75rem; line-height: 1.167; }
+.link2 { font-size: 0.875rem; line-height: 1.125; }
+.link3 { font-size: 1rem; line-height: 1.25; }
+
+
+/**
+* $TYPE-UTILITIES
+*/
+/* Weight Utilities */
+.w--400 { font-weight: 400; } /* Normal */
+.w--600 { font-weight: 600; } /* Semi Bold */
+.w--800 { font-weight: 800; } /* Bold */
+
+
+/* Alignment Utilities */
+.t--center { text-align: center }
+.t--right  { text-align: right }
+.t--left   { text-align: left }
+
+/* Text Transform Utilities */
+.small-caps {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+}
+@supports(font-feature-settings: "smcp" 1) {
+.small-caps { font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1 }}
+
+
+/**
+ * $HIDDEN
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;  
+}
+
+
+/**
+* $ICONS
+*/
+.icon {
+  --icon-dimensions--small:   16px;
+  --icon-dimensions:          24px;
+  --icon-dimensions--medium:  32px;
+  --icon-dimensions--large:   64px;
+  --icon-dimensions--huge:    84px;
+  --icon-dimensions--natural: inherit;
+
+  display: inline-block;
+  vertical-align: middle;
+  width: var(--icon-dimensions);
+  height: var(--icon-dimensions);
+  position: relative;
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
+  fill: currentColor;
+}
+
+.icon--small   { width: var(--icon-dimensions--small); height: var(--icon-dimensions--small); }
+.icon--medium  { width: var(--icon-dimensions--medium); height: var(--icon-dimensions--medium); }
+.icon--large   { width: var(--icon-dimensions--large); height: var(--icon-dimensions--large); }
+.icon--huge    { width: var(--icon-dimensions--huge); height: var(--icon-dimensions--huge); }
+.icon--natural { width: var(--icon-dimensions--natural); height: var(--icon-dimensions--natural);}
+
+
+/* $BUTTONS */
+.button {
+  --button-padding:  0.75rem 1.25rem; /* 12px 20px */
+  --button-font-size: 1rem; /* 16px */
+
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+  margin: 0;
+  padding: var(--button-padding);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--button-font-size);
+  line-height: 1;
+  font-family: "Helvetica Neue LT Condensed";
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  text-align: center;
+  text-decoration: none;
+  border: 0 solid var(--dark-night-crimson);
+  cursor: pointer;
+  user-select: none;
+  transition: var(--transition);
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(167,52,86,0.25)
+}
+.button:hover { text-decoration: none; cursor: pointer }
+
+/* Primary Button */
+.button--primary { color: var(--white); background: var(--dark-night-crimson) }
+.button--primary:visited { color: var(--white); }
+.button--primary:hover,
+.button--primary:active { 
+  color: var(--white); 
+  background: var(--light-night-crimson); 
+}
+@media (prefers-color-scheme: dark) {
+  .button--primary { color: var(--dark-night-crimson); background: var(--white) }
+  .button--primary:visited { color: var(--dark-night-crimson); }
+}
+
+/* Secondary Button */
+.button--secondary {
+  color: var(--dark-night-crimson);
+  background: var(--white);
+  border-width: 1px;
+  border-color: var(--dark-night-crimson);
+}
+.button--secondary:visited { color: var(--dark-night-crimson); }
+.button--secondary:hover,
+.button--secondary:active {
+  color: var(--white);
+  background: var(--light-night-crimson);
+  border-color: var(--light-night-crimson);
+}
+
+/* Full Width Buttons */
+.button--full {
+  display: block;
+  width: 100%;
+}
+
+
+/**
+ * $PRODUCT CARD
+ */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 11.1875rem;
+  min-height: 32rem;
+  color: var(--dark-night-crimson);
+}
+
+/* Product Card Gallery */
+.product-card-gallery {
+  position: relative;
+}
+  .product-card-gallery__meatballs {
+    list-style: none;
+    display: block;
+    position: absolute;
+      top: 0;
+      left: 8px;
+    margin-top: 8px;
+    margin-left: 8px;
+  }
+    .meatball {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--dark-night-crimson--40);
+      border-radius: 50%;
+      
+      & + & {
+        margin-left: 2px;
+      }
+    }
+    .meatball--active {
+      background: var(--dark-night-crimson);
+    }
+
+  .product-card-gallery__whishlist {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+      top: 0;
+      right: 0;
+    margin-top:   8px;
+    margin-right: 8px;
+    padding: 0px;
+    border: 0;
+    background-color: var(--white);
+    border-radius: 50%;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .product-card-gallery-container {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--dark-night-crimson);
+  }
+
+  .product-card-gallery-container::-webkit-scrollbar-track { background-color: var(--white); }
+  .product-card-gallery-container::-webkit-scrollbar {
+    width: 4px;
+  }  
+  .product-card-gallery-container::-webkit-scrollbar-thumb {
+    background-color: var(--dark-night-crimson);
+    border-radius: 0;
+  }
+
+  .product-card-gallery__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #F5F5F5;
+    background-blend-mode: multiply;
+    aspect-ratio: 1;
+    scroll-snap-align: start;
+  }
+
+/* Product Card Badge */
+.product-card-badge {
+  padding: 0.406rem 0.5rem;
+/*   max-height: 1.4375rem; */
+  background-color: var(--blush);
+}
+  .product-card-badge__label {
+    display: block;
+    font-size: 0.875em;
+    line-height: 1;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.0325rem;
+    color: var(--light-night-crimson);
+  }
+
+/* Product Card Details */
+.product-card-details {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.125rem 0.5rem;
+}
+
+  /* Product Card Title Section */
+  .product-card-details__title-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;  
+  }
+    
+    .product-card-title,
+    .product-card-description {
+      font-style: normal;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.0325rem;
+    }
+
+    .product-card-title {
+      font-size: 1em;
+      line-height: 1;
+      color: var(--dark-night-crimson);
+    }
+    .product-card-description {
+      font-size: 0.875em;
+      line-height: 1.142;
+      color: var(--dark-night-crimson--60);
+    }
+
+/* Product Card Ratings */
+.product-card-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+  .product-card-rating__stars {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+  }
+    .rating-star {
+    }
+  
+  .product-card-rating__reviews {
+    font-size: 0.75rem;
+    line-height: 1;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--dark-night-crimson);
+  }
+
+
+/* Product Card Shade List */
+.product-card-shades {
+}
+
+  .product-card-sizes__list {
+    list-style: none;
+    display: flex;
+/*     flex-wrap: wrap; */
+    gap: 0;
+  }
+  .size-list-item {
+    display: flex;
+    white-space: nowrap;
+    padding: 0.468rem 0.343rem 0.406rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: var(--dark-night-crimson);
+    border: 1px solid var(--dark-night-crimson--20);
+    
+    & + & {
+      border-left: 0px;
+    }
+  }
+
+
+/* Product Card Sizes List */
+.product-card-sizes {}
+
+  .product-card-shades__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+    .shade-list-item {
+      width: 27px; 
+      height: 27px;
+    }
+
+  .product-card-shades__label {
+    font-size: 0.75rem;
+    line-height: 1;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.0325rem;
+    color: var(--dark-night-crimson--60);
+  }
+
+
+/* Product Card Price */
+.product-card-price {}
+  .product-card-price__total {
+    font-size: 0.875rem;
+    line-height: 1;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.0325rem;
+    color: var(--dark-night-crimson);  
+  }
+
+/* Product Card CTA */
+.product-card-cta {
+  
+}

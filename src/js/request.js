@@ -39,7 +39,7 @@ axiosInstance.interceptors.response.use(
             try {
                 const refreshToken = localStorage.getItem('refreshToken'); // Retrieve the stored refresh token.
                 // Make a request to your auth server to refresh the token.
-                const response = await axios.get('/auth/refresh', {
+                const response = await axios.get('https://social-backend-kzy5.onrender.com/auth/refresh', {
                     headers:{Authorization:`Bearer ${refreshToken}`}
                 });
                 const accessToken = response.data.accessToken;
@@ -48,7 +48,7 @@ axiosInstance.interceptors.response.use(
                 // Store the new access and refresh tokens.
                 localStorage.setItem('accessToken', accessToken);
                 // Update the authorization header with the new access token.
-                axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+                axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
                 return axiosInstance(originalRequest); // Retry the original request with the new access token.
               } catch (refreshError) {
                 // Handle refresh token errors by clearing stored tokens and redirecting to the login page.
