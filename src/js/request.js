@@ -39,7 +39,7 @@ axiosInstance.interceptors.response.use(
             try {
                 const refreshToken = localStorage.getItem('refreshToken'); // Retrieve the stored refresh token.
                 // Make a request to your auth server to refresh the token.
-                const response = await axios.get('https://social-backend-kzy5.onrender.com/auth/refresh', {
+                const response = await axios.get('https://social-backend-kzy5.onrender.comauth/refresh', {
                     headers:{Authorization:`Bearer ${refreshToken}`}
                 });
                 const accessToken = response.data.accessToken;
