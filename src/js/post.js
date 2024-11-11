@@ -17,9 +17,11 @@ axiosInstance.get(`/posts/${id}`).then(res => {
     cardProfile.className = "card-profile";
 
     const profileImg = document.createElement("img");
-    profileImg.src = res.data.user_img || "./images/user-solid (1).svg";
-    profileImg.alt = "";
-
+    if (res.data.user_image) {
+        profileImg.src = res.data.user_image
+    } else {
+        profileImg.src = "./images/user-solid (1).svg";
+    }
     const profileLink = document.createElement("a");
     profileLink.href = "#";
     profileLink.innerText = res.data.username;
@@ -97,32 +99,82 @@ axiosInstance.get(`/posts/${id}`).then(res => {
     comments.className = "coments";
 
     function addCommentToDOM(comment) {
+        const commentUserContainer = document.createElement("div");
+        commentUserContainer.style.display = 'flex';
+        commentUserContainer.style.alignItems = 'center';
+        commentUserContainer.style.marginBottom = '10px';
+
         const commentUserImg = document.createElement("img");
-        commentUserImg.src = comment.user_img || "./images/user-solid (1).svg";
-        commentUserImg.alt = "";
-        commentUserImg.id = "i";
+        if (comment.user_img) {
+            commentUserImg.src = comment.user_img
+        } else {
+            commentUserImg.src = "./images/user-solid (1).svg";
+            commentUserImg.alt = "User Image";
+        }
+        commentUserImg.style.width = '30px';
+        commentUserImg.style.height = '30px';
+        commentUserImg.style.borderRadius = '50%';
 
         const commentUser = document.createElement("a");
         commentUser.style.color = '#fff';
         commentUser.style.fontSize = '15px';
+        commentUser.style.marginLeft = '10px';
         commentUser.innerText = comment.username;
         commentUser.href = "#";
 
-        const comentText = document.createElement('p');
-        comentText.className = 'gg';
-        comentText.innerHTML = comment.content;
+        commentUserContainer.appendChild(commentUserImg);
+        commentUserContainer.appendChild(commentUser);
 
+        const commentText = document.createElement('p');
+        commentText.className = 'gg';
+        commentText.style.marginTop = '5px';
+        commentText.innerHTML = comment.content;
+
+        const commentDate = document.createElement("p");
+        commentDate.style.fontSize = '12px';
+        commentDate.style.color = '#ccc';
+        commentDate.style.marginTop = '5px';
+        commentDate.innerText = `Posted on: ${new Date(comment.created_at).toLocaleString()}`;
+
+        const comea = document.createElement('a');
+        comea.href = '#'
         const commentMenuImg = document.createElement("img");
-        commentMenuImg.src = "./images/ellipsis-vertical-solid.svg";
-        commentMenuImg.alt = "";
-        commentMenuImg.id = "m";
+        commentMenuImg.src = "./images/trash-solid.svg";
+        commentMenuImg.alt = "Comment Menu";
+        commentMenuImg.style.position = 'absolute';
+        commentMenuImg.style.top = '15px';
+        commentMenuImg.style.right = '15px';
+
+        comea.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            axiosInstance.delete(`/comments/${comment.id}`)
+                .then((res) => {
+                    if (res.data.success) {
+                        newComment.remove()
+                    }
+                    location.reload()
+                }).catch((error) => {
+                    console.error("Izohni o'chirishda xatolik:", error);
+                });
+        })
+
+        comea.appendChild(commentMenuImg);
 
         const newComment = document.createElement("div");
         newComment.className = "comment";
-        newComment.appendChild(commentUserImg);
-        newComment.appendChild(commentUser);
-        newComment.appendChild(comentText);
-        newComment.appendChild(commentMenuImg);
+        newComment.style.position = 'relative';
+        newComment.style.marginBottom = '15px';
+        newComment.style.padding = '10px';
+        newComment.style.border = '1px solid #ddd';
+        newComment.style.borderRadius = '8px';
+        newComment.style.backgroundColor = '#2c2c2c';
+
+        newComment.appendChild(commentUserContainer);
+        newComment.appendChild(commentText);
+        newComment.appendChild(commentDate);
+        newComment.appendChild(comea);
 
         comments.appendChild(newComment);
     }
@@ -139,9 +191,8 @@ axiosInstance.get(`/posts/${id}`).then(res => {
                     if (res.data.success) {
                         addCommentToDOM(res.data.comment);
                         commentInput.value = '';
-                        e.preventDefault();
-                        location.reload();
                     }
+                    location.reload()
                 })
                 .catch((error) => {
                     console.error("Izoh yuborishda xatolik:", error);
@@ -149,77 +200,17 @@ axiosInstance.get(`/posts/${id}`).then(res => {
         }
     });
     axiosInstance
-    .get(`/comments/${id}`)
-    .then(res => {
-        if (res.data && Array.isArray(res.data)) {
-            res.data.forEach(comment => {
-                const commentUserContainer = document.createElement("div");
-                commentUserContainer.style.display = 'flex';
-                commentUserContainer.style.alignItems = 'center'; 
-                commentUserContainer.style.marginBottom = '10px'; 
-
-                const commentUserImg = document.createElement("img");
-                commentUserImg.src = comment.user_img || "./images/user-solid (1).svg";
-                commentUserImg.alt = "User Image";
-                commentUserImg.style.width = '30px';
-                commentUserImg.style.height = '30px';
-                commentUserImg.style.borderRadius = '50%';
-
-                const commentUser = document.createElement("a");
-                commentUser.style.color = '#fff';
-                commentUser.style.fontSize = '15px';
-                commentUser.style.marginLeft = '10px';
-                commentUser.innerText = comment.username;
-                commentUser.href = "#";
-
-                commentUserContainer.appendChild(commentUserImg);
-                commentUserContainer.appendChild(commentUser);
-
-                const commentText = document.createElement('p');
-                commentText.className = 'gg';
-                commentText.style.marginTop = '5px';
-                commentText.innerHTML = comment.content;
-
-                const commentDate = document.createElement("p");
-                commentDate.style.fontSize = '12px';
-                commentDate.style.color = '#ccc';
-                commentDate.style.marginTop = '5px'; 
-                commentDate.innerText = `Posted on: ${new Date(comment.created_at).toLocaleString()}`;
-
-                const commentMenuImg = document.createElement("img");
-                commentMenuImg.src = "./images/ellipsis-vertical-solid.svg";
-                commentMenuImg.alt = "Comment Menu";
-                commentMenuImg.style.position = 'absolute';
-                commentMenuImg.style.top = '10px';
-                commentMenuImg.style.right = '10px'; 
-
-                const newComment = document.createElement("div");
-                newComment.className = "comment";
-                newComment.style.position = 'relative';  
-                newComment.style.marginBottom = '15px'; 
-                newComment.style.padding = '10px';
-                newComment.style.border = '1px solid #ddd';
-                newComment.style.borderRadius = '8px';
-                newComment.style.backgroundColor = '#2c2c2c';  
-
-                newComment.appendChild(commentUserContainer); 
-                newComment.appendChild(commentText);
-                newComment.appendChild(commentDate);
-                newComment.appendChild(commentMenuImg);
-
-                comments.appendChild(newComment);
-            });
-        } else {
-            console.log('No comments found or incorrect response format');
-        }
-    })
-    .catch(error => {
-        console.error('Error fetching comments:', error);
-    });
-
-
-
-
+        .get(`/comments/${id}`)
+        .then(res => {
+            if (res.data && Array.isArray(res.data)) {
+                res.data.forEach(comment => addCommentToDOM(comment));
+            } else {
+                console.log('No comments found or incorrect response format');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching comments:', error);
+        });
     commentSection.appendChild(comments);
 
     card.appendChild(cardProfile);

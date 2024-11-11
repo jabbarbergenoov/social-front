@@ -1,0 +1,112 @@
+* {
+    font-family: "Montserrat";
+}
+body {
+    background-color: #000;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+#search {
+    width: 300px;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid #ccc;
+}
+
+.search-results {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    position: absolute;
+    width: 300px;
+    display: none;
+}
+
+.search-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-item:hover {
+    background-color: #f0f0f0;
+}
+
+.cards-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+}
+.card {
+    border: 1px solid gray;
+    padding: 10px;
+    color: #fff;
+    display: block;
+    width: 70%;
+    border-radius: 10px;
+
+    &-profile {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
+                brightness(106%) contrast(100%);
+        }
+    }
+
+    &-text {
+        img {
+            padding-top: 50px;
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    & &-like {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 30px;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
+                brightness(106%) contrast(100%);
+        }
+
+        .liked {
+            filter: brightness(0) saturate(100%) invert(13%) sepia(97%) saturate(6405%) hue-rotate(359deg)
+                brightness(96%) contrast(113%);
+        }
+
+        .followed {
+            color: blue;
+        }
+    }
+
+    &-comment {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 30px;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
+                brightness(106%) contrast(100%);
+        }
+    }
+}
+
+.card-indicators {
+    display: flex;
+}

@@ -8,7 +8,7 @@ form.addEventListener('submit', (e) => {
     const password = document.querySelector("#password").value;
     const code = document.getElementById('code').value;
 
-    axios.post('https://social-backend-kzy5.onrender.com/auth/reset-pass', {
+    axios.post('http://192.168.1.25:8080/auth/reset-pass', {
         username: username,
         new_pass: password,
         code: Number(code),

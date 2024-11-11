@@ -45,7 +45,14 @@ function mes() {
             cardProfile.className = "card-profile";
 
             const profileImg = document.createElement("img");
-            profileImg.src = "./images/user-solid (1).svg";
+            if (post.user_image) {
+                console.log(post.user_image);
+                profileImg.src = post.user_image
+                profileImg.style.filter = 'none'
+            }
+            else {
+                profileImg.src = "./images/user-solid (1).svg";
+            }
             profileImg.alt = "User Profile";
 
             const username = document.createElement("p");
@@ -59,17 +66,30 @@ function mes() {
             follow.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                axiosInstance.post("/followings/follow", { username: post.username })
-                    .then(res => {
-                        if (res.status === 200) {
-                            follow.classList.toggle('followed');
-                            follow.innerText = follow.classList.contains('followed') ? 'followed' : 'follow';
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Follow qilishda xatolik:", error);
-                    });
-
+                if (follow.textContent == 'follow') {
+                    axiosInstance.post("/followings/follow", { username: post.username })
+                        .then(res => {
+                            if (res.status === 200) {
+                                follow.classList.toggle('followed');
+                                location.reload()
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Follow qilishda xatolik:", error);
+                        });
+                }
+                else {
+                    axiosInstance.post("/followings/unfollow", { username: post.username })
+                        .then(res => {
+                            if (res.status === 200) {
+                                follow.classList.toggle('followed');
+                                location.reload()
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Follow qilishda xatolik:", error);
+                        });
+                }
             });
 
             cardProfile.appendChild(profileImg);
