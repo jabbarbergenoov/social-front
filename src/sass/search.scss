@@ -13,6 +13,10 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
 }
 #search {
     width: 300px;
@@ -42,7 +46,6 @@ body {
     overflow-y: auto;
     border: 1px solid #ccc;
     background-color: white;
-    position: absolute;
     width: 300px;
     display: none;
 }
@@ -66,11 +69,16 @@ button {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    background-color: #000;
+    border: none;
+    width: 50%;
+    margin:  0 auto;
   }
   
   .user {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 10px;
