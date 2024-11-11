@@ -3,6 +3,12 @@
 }
 body {
     background-color: #000;
+    color: #fff;
+}
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .container {
     width: 80%;
@@ -12,17 +18,9 @@ body {
     width: 300px;
     padding: 10px;
     margin: 20px;
-    border: 1px solid #ccc;
-}
-
-.search-results {
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    background-color: white;
-    position: absolute;
-    width: 300px;
-    display: none;
+    background-color: #000;
+    border-radius: 10px;
+    border: 1px solid #fff;
 }
 
 .search-item {
@@ -30,83 +28,66 @@ body {
     cursor: pointer;
 }
 
-.search-item:hover {
-    background-color: #f0f0f0;
+button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
-.cards-inner {
+#results-container {
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    margin-top: 50px;
-}
-.card {
-    border: 1px solid gray;
-    padding: 10px;
-    color: #fff;
-    display: block;
-    width: 70%;
-    border-radius: 10px;
-
-    &-profile {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-
-        img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid #fff;
-            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
-                brightness(106%) contrast(100%);
-        }
-    }
-
-    &-text {
-        img {
-            padding-top: 50px;
-            width: 100%;
-            border-radius: 10px;
-        }
-    }
-
-    & &-like {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        img {
-            width: 30px;
-            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
-                brightness(106%) contrast(100%);
-        }
-
-        .liked {
-            filter: brightness(0) saturate(100%) invert(13%) sepia(97%) saturate(6405%) hue-rotate(359deg)
-                brightness(96%) contrast(113%);
-        }
-
-        .followed {
-            color: blue;
-        }
-    }
-
-    &-comment {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        img {
-            width: 30px;
-            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
-                brightness(106%) contrast(100%);
-        }
-    }
-}
-
-.card-indicators {
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .user {
     display: flex;
-}
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  .user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+  
+  .user a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  
+    &:hover {
+      color: #007bff;
+    }
+  }
+  
+  .user a:last-child {
+    margin-left: auto;
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .user a:last-child:hover {
+    text-decoration: underline;
+  }
+  
