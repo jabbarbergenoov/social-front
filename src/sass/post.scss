@@ -52,6 +52,21 @@ a {
     width: 40px;
   }
 }
+.arr {
+  position: relative;
+  left: 180px;
+  top: 20px;
+  background: #444;
+  border-radius: 10px;
+  width: 50px;
+  padding: 10px;
+  margin-bottom: 30px;
+  &-img {
+      width: 25px;
+
+      filter: brightness(0) saturate(100%) invert(99%) sepia(59%) saturate(2%) hue-rotate(144deg) brightness(111%) contrast(100%);
+  }
+}
 .coment {
   width: 100%;
   margin-top: 20px;
