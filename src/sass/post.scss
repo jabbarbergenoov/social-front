@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  font-family: "Montserrat";
+}
+a {
+  text-decoration: none;
+  color: #000;
+  font-size: 25px;
+}
+.container {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid #100d0d;
+}
+.card {
+  width: 90%;
+}
+.card-profile {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #000;
+  }
+}
+.card-img {
+  margin-top: 30px;
+  img {
+    border: 4px solid #000;
+    width: 90%;
+    border-radius: 10px;
+  }
+}
+.like {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+  img {
+    width: 40px;
+  }
+}
+.coment {
+  width: 100%;
+  margin-top: 20px;
+}
+#form_coment {
+  display: flex;
+  gap: 20px;
+  input {
+    width: 82%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid transparent;
+    transition: 0.5s;
+    &:hover {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+    }
+  }
+}
+.card-text {
+  margin-top: 30px;
+  width: 90%;
+}
+.coments {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+  .comment {
+    width: 95%;
+    margin-top: 20px;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 10px;
+    img {
+      width: 20px;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%)
+        contrast(102%);
+      height: 20px;
+    }
+  }
+  #i {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(258deg) brightness(104%)
+      contrast(102%);
+  }
+  p {
+    color: #fff;
+  }
+}
+#m {
+  margin-left: 950px;
+  width: 25px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(74%) sepia(100%) saturate(2%) hue-rotate(31deg) brightness(111%)
+    contrast(101%);
+}
+.liked {
+  filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(7021%) hue-rotate(3deg) brightness(107%)
+    contrast(118%);
+}

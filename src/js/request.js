@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create Axios instance
 export const axiosInstance = axios.create({
-    baseURL: 'https://social-backend-kzy5.onrender.com', // O'z URL manzilingizni kiriting
+    baseURL: 'http://192.168.1.25:8080', // O'z URL manzilingizni kiriting
     headers: {
         'Content-Type': 'application/json',
     },
@@ -39,7 +39,7 @@ axiosInstance.interceptors.response.use(
             try {
                 const refreshToken = localStorage.getItem('refreshToken'); // Retrieve the stored refresh token.
                 // Make a request to your auth server to refresh the token.
-                const response = await axios.get('https://social-backend-kzy5.onrender.com/auth/refresh', {
+                const response = await axios.get('http://192.168.1.25:8080/auth/refresh', {
                     headers:{Authorization:`Bearer ${refreshToken}`}
                 });
                 const accessToken = response.data.accessToken;
