@@ -52,9 +52,14 @@ axiosInstance.get(`/posts/${id}`).then(res => {
     likeImg.src = "./images/heart-solid (3).svg";
     likeImg.alt = "";
 
+    const commentImg = document.createElement("img");
+    commentImg.src = "./images/comment-solid.svg";
+    likeImg.alt = "gdfg";
     const likeText = document.createElement("p");
-    likeText.innerText = "Like";
     likeText.innerHTML = res.data.likes;
+
+    const commentText = document.createElement("p");
+    commentText.innerHTML = res.data.comments;
     if (res.data.has_liked === true) {
         likeImg.classList.value = 'liked';
     }
@@ -76,6 +81,9 @@ axiosInstance.get(`/posts/${id}`).then(res => {
 
     likeSection.appendChild(likeImg);
     likeSection.appendChild(likeText);
+    likeSection.appendChild(commentImg)
+    likeSection.appendChild(commentText);
+
 
     const commentSection = document.createElement("div");
     commentSection.className = "coment";
@@ -105,12 +113,7 @@ axiosInstance.get(`/posts/${id}`).then(res => {
         commentUserContainer.style.marginBottom = '10px';
 
         const commentUserImg = document.createElement("img");
-        if (comment.user_img) {
-            commentUserImg.src = comment.user_img
-        } else {
-            commentUserImg.src = "./images/user-solid (1).svg";
-            commentUserImg.alt = "User Image";
-        }
+        commentUserImg.src = comment.user_img || "./images/user-solid (1).svg";
         commentUserImg.style.width = '30px';
         commentUserImg.style.height = '30px';
         commentUserImg.style.borderRadius = '50%';
@@ -140,6 +143,7 @@ axiosInstance.get(`/posts/${id}`).then(res => {
         comea.href = '#'
         const commentMenuImg = document.createElement("img");
         commentMenuImg.src = "./images/trash-solid.svg";
+        commentMenuImg.classList.value = 'trash'
         commentMenuImg.alt = "Comment Menu";
         commentMenuImg.style.position = 'absolute';
         commentMenuImg.style.top = '15px';

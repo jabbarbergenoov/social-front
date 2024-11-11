@@ -53,6 +53,12 @@ form.addEventListener('submit', async (e) => {
             })
         })
             .catch(err => {
+                if (err.status === 400){
+                    const p = document.createElement('p')
+                    p.innerHTML = 'this photo type doesnt support'
+                    p.style.color = 'red'
+                    form.appendChild(p)
+                }
                 console.log(err);
             })
     } else {
