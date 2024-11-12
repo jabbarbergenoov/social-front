@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #000;
+    font-family: "Montserrat";
+}
+.container {
+    border-radius: 10px;
+    width: 70%;
+    background-color: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.user {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &-img {
+        img {
+            width: 50px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            height: 50px;
+        }
+    }
+}
+.info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+.follow {
+    cursor: pointerh;
+    display: flex;
+    gap: 35px;
+}
