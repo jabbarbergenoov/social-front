@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
-</head>
-<body>
+  </head>
+  <body>
+      <div class="arr">
+        <a href="./index.html">
+          <img src="./images/arrow-left-solid.svg" alt="Home" class="arr-img" />
+        </a>
+      </div>
+  
     <div class="container">
-        <div class="user">
-            <div class="user-img">
-                <img src="./images/user-solid (1).svg" alt="">
-            </div>
-            <div class="user-text">
-                <h2>username</h2>
-                <p>exam@gmail.com</p>
-            </div>
-        </div>
-        <div class="info">
-            <h2>Last Name</h2>
-            <h2>First Name</h2>
-        </div>
-        <div class="follow">
-            <div class="followers">
-                <h2>Followers</h2>
-                <p>n</p>
-            </div>
-            <div class="followings">
-                <h2>Followings</h2>
-                <p>n</p>
-            </div>
-        
-        </div>
+      <form action="" id="form">
+        <label for="">Will you change your avatar?</label>
+        <input type="file" id="imgInput" accept="image/*" />
+        <br /><br />
+        <img
+          id="displayImg"
+          alt="Yuklangan rasm bu yerda ko'rinadi"
+          style="display: none; max-width: 100%; height: auto"
+        />
+        <input type="submit" value="edit" />
+      </form>
     </div>
     <script type="module" src="./js/profile.js"></script>
-</body>
+  </body>
 </html>

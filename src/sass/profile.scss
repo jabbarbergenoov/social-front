@@ -41,3 +41,65 @@ body {
     display: flex;
     gap: 35px;
 }
+#form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#displayImg {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.arr {
+    background: #444;
+    border-radius: 10px;
+    width: 50px;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin: 50px;
+    &-img {
+        width: 25px;
+
+        filter: brightness(0) saturate(100%) invert(99%) sepia(59%) saturate(2%) hue-rotate(144deg) brightness(111%)
+            contrast(100%);
+    }
+}
+label {
+    display: block;
+    padding-bottom: 20px;
+}
+label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+#displayImg {
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}

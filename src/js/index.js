@@ -155,6 +155,7 @@ function mes() {
             commentImg.alt = "Comment";
 
             const commentText = document.createElement("p");
+            commentText.id = "b"
             commentText.innerText = post.comments
 
             cardComment.appendChild(commentImg);

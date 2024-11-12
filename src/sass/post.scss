@@ -140,3 +140,56 @@ a {
   filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(7021%) hue-rotate(3deg) brightness(107%)
     contrast(118%);
 }
+@media screen and (max-width:1000px ) {
+ .arr {
+  left: 100px;
+ } 
+}
+@media screen and (max-width:625px ) {
+  .arr {
+    left: 50px;
+  }
+  .card-profile a {
+    font-size: 18px;
+  }
+  .card-text {
+    padding-top: 0px;
+  }
+  .like {
+    font-size: 15px;
+    img {
+      width: 25px;
+    }
+  }
+  .coment {
+    font-size: 13px;
+    a {
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width:515px ) {
+  .container {
+    padding: 20px;
+  }
+  .coment {
+    p {
+      font-size: 13px;
+    }
+  }
+}
+@media screen and (max-width:400px ) {
+  .container {
+    padding: 10px;
+  }
+  .card-img _{
+    img {
+      width: 100%;
+    }
+  }
+  #p {
+    font-size: 10px;
+  }
+}

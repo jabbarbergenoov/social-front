@@ -134,6 +134,7 @@ axiosInstance.get(`/posts/${id}`).then(res => {
         commentText.innerHTML = comment.content;
 
         const commentDate = document.createElement("p");
+        commentDate.className = 'p'
         commentDate.style.fontSize = '12px';
         commentDate.style.color = '#ccc';
         commentDate.style.marginTop = '5px';
