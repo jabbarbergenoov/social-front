@@ -193,3 +193,86 @@ a {
     font-size: 10px;
   }
 }
+@media screen and (max-width: 320px) {
+  /* Контейнер */
+  .container {
+    width: 90%;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Кнопка возврата */
+  .arr {
+    left: 30px;
+    width: 40px;
+    padding: 8px;
+  }
+
+  /* Профильная карточка */
+  .card-profile {
+    gap: 10px;
+  }
+  .card-profile img {
+    width: 35px;
+    height: 35px;
+  }
+  .card-profile a {
+    font-size: 16px;
+  }
+
+  /* Текст карточки */
+  .card-text {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  /* Картинка карточки */
+  .card-img img {
+    width: 100%;
+  }
+
+  /* Иконки лайков и комментариев */
+  .like {
+    gap: 10px;
+    font-size: 14px;
+  }
+  .like img {
+    width: 20px;
+  }
+
+  /* Комментарий */
+  .coment {
+    font-size: 12px;
+  }
+  #form_coment input {
+    width: 75%;
+    padding: 8px;
+  }
+  #form_coment button {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* Комментарии */
+  .coments .comment {
+    width: 90%;
+    font-size: 12px;
+    padding: 8px;
+  }
+  .coments img {
+    width: 18px;
+    height: 18px;
+  }
+  .coments p {
+    font-size: 12px;
+  }
+
+  /* Иконка "Удалить" и другие изображения */
+  .comment .trash, #i, #m {
+    width: 20px;
+    height: 20px;
+  }
+  #p {
+    font-size: 9px;
+  }
+}

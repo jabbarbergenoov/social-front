@@ -1,3 +1,6 @@
+body {
+    background-color: black;
+}
 * {
     padding: 0;
     margin: 0;
@@ -64,13 +67,15 @@ body {
     padding: 10px;
     margin-bottom: 30px;
     margin: 50px;
-    &-img {
-        width: 25px;
-
-        filter: brightness(0) saturate(100%) invert(99%) sepia(59%) saturate(2%) hue-rotate(144deg) brightness(111%)
-            contrast(100%);
-    }
+    cursor: pointer; 
 }
+
+.arr-img {
+    width: 25px;
+    filter: brightness(0) saturate(100%) invert(99%) sepia(59%) saturate(2%) hue-rotate(144deg) brightness(111%)
+        contrast(100%);
+}
+
 label {
     display: block;
     padding-bottom: 20px;
@@ -103,6 +108,37 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+.follow-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.follow-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.follow-button.followed {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.follow-button.followed:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+#username {
+    color: #fff;
+}
+
 @media screen and (max-width: 1024px) {
     .container {
         flex-direction: column;
@@ -114,6 +150,11 @@ input[type="submit"]:hover {
         margin-top: 20px;
     }
 }
+@media screen and (max-width: 600px) {
+    .follow {
+        flex-direction: column;
+    }
+} 
 @media screen and (max-width: 520px) {
     .info {
         h2 {
@@ -122,7 +163,7 @@ input[type="submit"]:hover {
     }
     .follow {
         font-size: 14px;
-        gap: 75px;
+        gap: 2g5px;
     }
 }
 @media screen and (max-width: 450px) {

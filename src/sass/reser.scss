@@ -264,3 +264,49 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
   text-decoration: none;
 }
+@media screen and (max-width:360px) {
+  .container {
+    width: 210px;
+    margin:  0 auto;
+  }
+  form {
+    width: 210px;
+    margin: 0 auto;
+  }
+  fieldset {
+    width: 250px;
+    margin: 0 ;
+    justify-content: center;
+    align-items: center;
+  }
+  body {
+    padding: 0;
+    padding-right: 20px;
+  }
+  fieldset legend {
+    font-size: 1em;
+    text-align: center;
+  }
+  input[type= text] {
+    font-size: 0.9em;
+  }
+  .tologin {
+    text-align: start;
+    margin: 0px;
+  }
+  #p {
+    padding: 0;
+    margin: 0;
+    color: red;
+  }
+  .signin {
+    font-size: 0.7em;
+    margin-bottom: 30px;
+  }
+  .dd  {
+    a {
+      font-size: 12px;
+    }
+    
+  }
+} 

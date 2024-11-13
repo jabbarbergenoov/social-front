@@ -123,4 +123,60 @@ button {
   .user a:last-child:hover {
     text-decoration: underline;
   }
-  
+  @media screen and (max-width:830px) {
+    #results-container {
+      width: 80%;
+    }
+    .user  {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+  @media screen and (max-width:650px) {
+    #results-container {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width:550px) {
+    .arr {
+      left: 0px;
+    }
+    #results-container {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  @media screen and (max-width:475px) {
+    #results-container {
+      width: 100%;
+      padding: 10px;
+    }
+    #search {
+      width: 210px;
+    }
+  }
+  @media screen and (max-width:400px) {
+    #search {
+      width: 150px;
+    }
+    .user  {
+      a {
+        font-size: 14px;
+      }
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  @media screen and (max-width:340px) {
+    #form {
+      button {
+        padding: 8px;
+      }
+      input {
+        padding: 8px;
+      }
+    }
+  }
