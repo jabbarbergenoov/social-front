@@ -55,7 +55,9 @@ function mes() {
             }
             profileImg.alt = "User Profile";
 
-            const username = document.createElement("p");
+            const username = document.createElement("a");
+            username.style.color = '#fff'
+            username.href = `${window.location.protocol}//${url}/user.html?username=${post.username}`
             username.id = "username";
             username.innerText = post.username;
 
@@ -155,6 +157,7 @@ function mes() {
             commentImg.alt = "Comment";
 
             const commentText = document.createElement("p");
+            commentText.id = "b"
             commentText.innerText = post.comments
 
             cardComment.appendChild(commentImg);

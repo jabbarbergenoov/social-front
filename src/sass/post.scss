@@ -140,3 +140,139 @@ a {
   filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(7021%) hue-rotate(3deg) brightness(107%)
     contrast(118%);
 }
+@media screen and (max-width:1000px ) {
+ .arr {
+  left: 100px;
+ } 
+}
+@media screen and (max-width:625px ) {
+  .arr {
+    left: 50px;
+  }
+  .card-profile a {
+    font-size: 18px;
+  }
+  .card-text {
+    padding-top: 0px;
+  }
+  .like {
+    font-size: 15px;
+    img {
+      width: 25px;
+    }
+  }
+  .coment {
+    font-size: 13px;
+    a {
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width:515px ) {
+  .container {
+    padding: 20px;
+  }
+  .coment {
+    p {
+      font-size: 13px;
+    }
+  }
+}
+@media screen and (max-width:400px ) {
+  .container {
+    padding: 10px;
+  }
+  .card-img _{
+    img {
+      width: 100%;
+    }
+  }
+  #p {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 320px) {
+  /* Контейнер */
+  .container {
+    width: 90%;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Кнопка возврата */
+  .arr {
+    left: 30px;
+    width: 40px;
+    padding: 8px;
+  }
+
+  /* Профильная карточка */
+  .card-profile {
+    gap: 10px;
+  }
+  .card-profile img {
+    width: 35px;
+    height: 35px;
+  }
+  .card-profile a {
+    font-size: 16px;
+  }
+
+  /* Текст карточки */
+  .card-text {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  /* Картинка карточки */
+  .card-img img {
+    width: 100%;
+  }
+
+  /* Иконки лайков и комментариев */
+  .like {
+    gap: 10px;
+    font-size: 14px;
+  }
+  .like img {
+    width: 20px;
+  }
+
+  /* Комментарий */
+  .coment {
+    font-size: 12px;
+  }
+  #form_coment input {
+    width: 75%;
+    padding: 8px;
+  }
+  #form_coment button {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* Комментарии */
+  .coments .comment {
+    width: 90%;
+    font-size: 12px;
+    padding: 8px;
+  }
+  .coments img {
+    width: 18px;
+    height: 18px;
+  }
+  .coments p {
+    font-size: 12px;
+  }
+
+  /* Иконка "Удалить" и другие изображения */
+  .comment .trash, #i, #m {
+    width: 20px;
+    height: 20px;
+  }
+  #p {
+    font-size: 9px;
+  }
+}

@@ -5,7 +5,6 @@
     font-family: "Montserrat";
 }
 
-
 .container {
     width: 90%;
     margin: 0 auto;
@@ -50,7 +49,8 @@ main {
 
         img {
             width: 45px;
-            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg) brightness(106%) contrast(100%);
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
+                brightness(106%) contrast(100%);
         }
     }
 
@@ -192,7 +192,8 @@ main {
             height: 40px;
             border-radius: 50%;
             border: 1px solid #fff;
-            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg) brightness(106%) contrast(100%);
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
+                brightness(106%) contrast(100%);
         }
     }
 
@@ -212,11 +213,13 @@ main {
 
         img {
             width: 30px;
-            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg) brightness(106%) contrast(100%);
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
+                brightness(106%) contrast(100%);
         }
 
         .liked {
-            filter: brightness(0) saturate(100%) invert(13%) sepia(97%) saturate(6405%) hue-rotate(359deg) brightness(96%) contrast(113%);
+            filter: brightness(0) saturate(100%) invert(13%) sepia(97%) saturate(6405%) hue-rotate(359deg)
+                brightness(96%) contrast(113%);
         }
 
         .followed {
@@ -232,7 +235,8 @@ main {
 
         img {
             width: 30px;
-            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg) brightness(106%) contrast(100%);
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(186deg)
+                brightness(106%) contrast(100%);
         }
     }
 }
@@ -270,14 +274,13 @@ main {
         background-color: #fff;
         border-radius: 10px;
         transition: 0.8s;
-    
+
         &:hover {
             background-color: #000;
             color: #fff;
             box-shadow: 2px 2px 2px 2px rgb(42, 42, 42);
         }
     }
-  
 }
 
 @media screen and (max-width: 980px) {
@@ -394,10 +397,10 @@ main {
         flex-direction: column;
         gap: 20px;
         background-color: gray;
-        width: 500px;
+        width: 379px;
         align-items: center;
         justify-content: center;
-        padding: 100px 0px;
+        padding: 63px 50px;
         border-radius: 10px;
         right: 100%;
     }
@@ -411,7 +414,8 @@ main {
         display: flex;
         color: #fff;
 
-        a {}
+        a {
+        }
     }
 
     .aslide-bars {
@@ -456,11 +460,16 @@ main {
         width: 300px;
     }
 }
-
+@media screen and (max-width: 350px) {
+    .aslide-main {
+        width: 250px;
+    }
+} 
 @media screen and (max-width: 320px) {
     .aslide-main {
         left: -1999999999px;
         width: 250px;
+        align-items: start;
     }
 
     .section1 {
