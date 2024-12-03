@@ -10,8 +10,8 @@ form.addEventListener("submit", (e) => {
     const password = document.querySelector("#password").value;
     const p = document.getElementById('p'); 
     p.style.color = "red"
-    axios.post("https://social-backend-kzy5.onrender.com/auth/login", {
-        username: username,
+    axios.post("https://b410-213-230-92-237.ngrok-free.app/auth/login", {
+        login: username,
         password: password,
     })
     .then(res => {
@@ -26,9 +26,10 @@ form.addEventListener("submit", (e) => {
             if (res.status === 200) {
                 window.location.href = 'index.html';
             }
-        } else {
-            p.textContent = "Tokens not found";
-        }
+        } 
+        // else {
+        //     p.textContent = "Tokens not found";
+        // }
     })
     .catch((err) => {
         console.error(err);
