@@ -13,6 +13,8 @@ form.addEventListener("submit", (e) => {
     axios.post("https://b410-213-230-92-237.ngrok-free.app/auth/login", {
         login: username,
         password: password,
+    },{
+        withCredentials:true
     })
     .then(res => {
         const accessToken = res.data.access_token;
